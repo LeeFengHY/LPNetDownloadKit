@@ -65,3 +65,42 @@
 
 ## NSRunLoop 将当前的connection添加一个runLoop
 
+## 实例代码
+
+```objc
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view, typically from a nib.
+    _operationQueue = [[NSOperationQueue alloc] init];
+    _operationQueue.maxConcurrentOperationCount = 3;
+   
+    
+}
+
+
+- (IBAction)downloaderFile:(UIButton *)sender {
+    [sender setTitle:@"下载中...." forState:UIControlStateNormal];
+    _progressSlider.value = 0.0;
+    LPDownloaderOperation *operation = [[LPDownloaderOperation alloc] initWithRequestURL:URL progress:^(CGFloat percent) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            _progressSlider.value = percent;
+        });
+    } fileName:^(NSString *name) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            _fileNameLabel.text = name;
+        });
+    } completion:^(id response, NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIImage *image = [UIImage imageWithData:response];
+            _fileImageView.image = image;
+            [sender setTitle:@"下载完成" forState:UIControlStateNormal];
+        });
+    }];
+    [_operationQueue addOperation:operation];
+    [_operationQueue addOperationWithBlock:^{
+        NSLog(@"next operation");
+    }];
+}
+
+```
