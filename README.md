@@ -1,11 +1,7 @@
 # LPNetDownloadKit
 ## 知识点NSOperation和NSRunLoop结合使用,主要是笔者做了个小demo用于工作中并发操作
 * LPDownloaderOperation 继承NSOperation,根据需求重新实现
-  '/**
- 支持并发
-
- @return BOOL
- */
+'
 - (BOOL)isConcurrent
 {
     return YES;
