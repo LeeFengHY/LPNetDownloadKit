@@ -2,7 +2,9 @@
 ## 知识点NSOperation和NSRunLoop结合使用,主要是笔者做了个小demo用于工作中并发操作
 
 > LPDownloaderOperation 继承NSOperation,根据需求重新实现
+
 ```objc
+
 #pragma mark - NSOperation Methods
 - (void)cancel
 {
@@ -57,6 +59,7 @@
 }
 
 ```
+
 ## NSURLConnection 用于异步请求数据,推荐使用NSURLSession替代
 
 
