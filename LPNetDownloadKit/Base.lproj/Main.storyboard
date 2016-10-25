@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I6e-1J-dpi">
+                                <state key="normal" title="Download"/>
+                                <connections>
+                                    <action selector="downloaderFile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iuy-rj-z3Z"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="文件名字:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8r-hd-R3T">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="41z-Bn-OKO"/>
+                                    <constraint firstAttribute="width" constant="74" id="yW6-P5-Yga"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="GyT-cC-PKy">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="JEa-os-4KG"/>
+                                </constraints>
+                            </slider>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dlo-MX-7nQ"/>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Dlo-MX-7nQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="40" id="01R-9k-TZg"/>
+                            <constraint firstItem="GyT-cC-PKy" firstAttribute="leading" secondItem="F8r-hd-R3T" secondAttribute="trailing" constant="5" id="9uQ-88-4pg"/>
+                            <constraint firstItem="F8r-hd-R3T" firstAttribute="top" secondItem="I6e-1J-dpi" secondAttribute="bottom" constant="43" id="GvR-vy-auU"/>
+                            <constraint firstAttribute="trailing" secondItem="Dlo-MX-7nQ" secondAttribute="trailing" constant="20" id="Hhc-xP-hGu"/>
+                            <constraint firstItem="I6e-1J-dpi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="168" id="JHe-Ti-3Xr"/>
+                            <constraint firstItem="GyT-cC-PKy" firstAttribute="centerY" secondItem="F8r-hd-R3T" secondAttribute="centerY" id="LNh-0U-3Pr"/>
+                            <constraint firstItem="I6e-1J-dpi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NRh-gm-SFS"/>
+                            <constraint firstItem="Dlo-MX-7nQ" firstAttribute="top" secondItem="GyT-cC-PKy" secondAttribute="bottom" constant="31" id="RLH-yM-QHa"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Dlo-MX-7nQ" secondAttribute="bottom" constant="76" id="rDp-y6-Hxv"/>
+                            <constraint firstAttribute="trailing" secondItem="GyT-cC-PKy" secondAttribute="trailing" constant="20" id="rO2-xI-rCW"/>
+                            <constraint firstItem="F8r-hd-R3T" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="40" id="tcK-54-GQU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="fileImageView" destination="Dlo-MX-7nQ" id="dMF-KJ-U0f"/>
+                        <outlet property="fileNameLabel" destination="F8r-hd-R3T" id="iKD-xL-3CW"/>
+                        <outlet property="progressSlider" destination="GyT-cC-PKy" id="VZu-GG-zc1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-74.400000000000006" y="81.409295352323838"/>
+        </scene>
+    </scenes>
+</document>
